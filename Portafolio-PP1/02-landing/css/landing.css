@@ -1,0 +1,84 @@
+/* ===========================================================
+   TP2 - Ejercicio 2: estilos propios de la landing
+   (complementan Bootstrap 5)
+   =========================================================== */
+
+:root {
+    --vino:       #7a1f3d;   /* color de marca */
+    --vino-osc:   #4d1226;
+    --dorado:     #f2b84b;   /* color de acento (botón reservar) */
+    --crema:      #fbf5ee;   /* fondo de secciones claras */
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    color: #2b2b2b;
+    scroll-behavior: smooth;
+}
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }  /* el menú fijo no tapa los títulos */
+
+/* Barra de menú y pie */
+.barra { background-color: var(--vino-osc); }
+.navbar .nav-link { color: rgba(255,255,255,.85); }
+.navbar .nav-link:hover { color: #fff; }
+
+/* Botón de acción principal */
+.btn-reservar {
+    background-color: var(--dorado);
+    border-color: var(--dorado);
+    color: #3a2400;
+    font-weight: 600;
+}
+.btn-reservar:hover { background-color: #e5a52c; border-color: #e5a52c; color: #3a2400; }
+
+.btn-outline-vino { color: var(--vino); border-color: var(--vino); }
+.btn-outline-vino:hover { background-color: var(--vino); color: #fff; }
+
+/* Carrusel: altura adaptable (más bajo en celulares) */
+.slide { height: 62vh; min-height: 340px; max-height: 620px; object-fit: cover; }
+.carousel-caption {
+    bottom: 18%;
+    text-shadow: 0 2px 8px rgba(0,0,0,.55);
+}
+
+/* Títulos de sección con subrayado de marca */
+.titulo-seccion { color: var(--vino); font-weight: 700; }
+.titulo-seccion::after {
+    content: "";
+    display: block;
+    width: 60px; height: 4px;
+    margin: 8px auto 0;
+    background-color: var(--dorado);
+    border-radius: 2px;
+}
+
+/* Tarjetas de tours */
+.tour {
+    border: 0;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(77,18,38,.12);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.tour:hover { transform: translateY(-4px); box-shadow: 0 12px 26px rgba(77,18,38,.2); }
+.etiqueta { background-color: var(--crema); color: var(--vino); border: 1px solid #ead9c4; }
+.precio { color: var(--vino); font-size: 1.2rem; }
+
+/* Beneficios */
+.fondo-claro { background-color: var(--crema); }
+.icono { font-size: 2.6rem; line-height: 1; margin-bottom: .5rem; }
+
+/* Llamado a la acción */
+.llamado { background: linear-gradient(135deg, var(--vino), var(--vino-osc)); }
+
+/* Ajustes para celulares muy angostos */
+@media (max-width: 400px) {
+    .carousel-caption h1, .carousel-caption h2 { font-size: 1.6rem; }
+}
+
+/* Colores explícitos para no depender de variables de Bootstrap */
+.carousel-caption h1,
+.carousel-caption h2 { color: #fff; }
+.tour h3,
+#porque h3 { color: var(--vino-osc); font-weight: 700; }
+.llamado h2 { color: #fff; }
+.text-secondary { color: #5b6670 !important; }

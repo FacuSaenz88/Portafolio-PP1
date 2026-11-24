@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" preserveAspectRatio="xMidYMid slice">
+  <!-- Slide 1: atardecer con la cordillera y los viñedos -->
+  <defs>
+    <linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3b2a5c"/><stop offset=".45" stop-color="#c0476b"/><stop offset="1" stop-color="#f6a35b"/>
+    </linearGradient>
+    <linearGradient id="suelo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4e6b2f"/><stop offset="1" stop-color="#27391a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="700" fill="url(#cielo)"/>
+  <circle cx="1130" cy="330" r="95" fill="#ffd89a" opacity=".95"/>
+  <polygon points="0,440 180,300 300,380 470,230 640,390 790,320 950,420 1120,290 1290,400 1440,310 1600,420 1600,500 0,500" fill="#4a3a78" opacity=".85"/>
+  <polygon points="0,480 220,380 380,450 560,350 760,460 960,380 1180,470 1380,390 1600,470 1600,520 0,520" fill="#2d2552"/>
+  <rect y="480" width="1600" height="220" fill="url(#suelo)"/>
+  <!-- hileras de viñedo convergiendo al horizonte -->
+  <g stroke="#8fb255" stroke-width="5" opacity=".75">
+    <line x1="800" y1="490" x2="-200" y2="700"/><line x1="800" y1="490" x2="150" y2="700"/>
+    <line x1="800" y1="490" x2="480" y2="700"/><line x1="800" y1="490" x2="800" y2="700"/>
+    <line x1="800" y1="490" x2="1120" y2="700"/><line x1="800" y1="490" x2="1450" y2="700"/>
+    <line x1="800" y1="490" x2="1800" y2="700"/>
+  </g>
+</svg>

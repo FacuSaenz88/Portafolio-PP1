@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "nombre": "5.000 CP Points",
+    "juego": "Call of Duty",
+    "tipo": "Monedas",
+    "precio": 14.99,
+    "stock": 10,
+    "imagen": "img/cp_coins.png",
+    "descripcion": "Monedas oficiales de Call of Duty.",
+    "detalle": "Paquete de 5.000 CP Points para usar en la tienda del juego. Se acredita en tu cuenta una vez confirmado el pago."
+  },
+  {
+    "id": 2,
+    "nombre": "Skin de Homelander",
+    "juego": "Call of Duty",
+    "tipo": "Skin de personaje",
+    "precio": 5.99,
+    "stock": 5,
+    "imagen": "img/homelander_skin.png",
+    "descripcion": "Aspecto exclusivo para tu personaje.",
+    "detalle": "Aspecto completo para tu operador. Se entrega en tu cuenta del juego y queda disponible en el menú de personalización."
+  },
+  {
+    "id": 3,
+    "nombre": "Skin de Arma AK-47",
+    "juego": "Call of Duty",
+    "tipo": "Skin de arma",
+    "precio": 4.99,
+    "stock": 8,
+    "imagen": "img/ak-47_skin.png",
+    "descripcion": "Diseño legendario para tu AK-47.",
+    "detalle": "Camuflaje para tu AK-47. Es solo estético: no cambia el daño ni el rendimiento del arma."
+  },
+  {
+    "id": 4,
+    "nombre": "800 V-Bucks",
+    "juego": "Fortnite",
+    "tipo": "Monedas",
+    "precio": 10.0,
+    "stock": 20,
+    "imagen": "img/v-bucks.png",
+    "descripcion": "Monedas oficiales de Fortnite.",
+    "detalle": "Paquete de 800 V-Bucks para comprar aspectos, emotes y el pase de batalla dentro de Fortnite."
+  },
+  {
+    "id": 5,
+    "nombre": "Skin de Messi",
+    "juego": "Fortnite",
+    "tipo": "Skin de personaje",
+    "precio": 8.99,
+    "stock": 3,
+    "imagen": "img/skin_messi.png",
+    "descripcion": "Jugá con el 10 en la isla.",
+    "detalle": "Aspecto de Messi para tu personaje. Edición limitada en esta tienda: quedan pocas unidades."
+  },
+  {
+    "id": 6,
+    "nombre": "Parapente",
+    "juego": "Fortnite",
+    "tipo": "Accesorio",
+    "precio": 3.99,
+    "stock": 6,
+    "imagen": "img/parapente.png",
+    "descripcion": "Aterrizá en la isla como un Vengador.",
+    "detalle": "Parapente para descender al mapa con estilo. Es un objeto cosmético."
+  },
+  {
+    "id": 7,
+    "nombre": "11.000 Valorant Points",
+    "juego": "Valorant",
+    "tipo": "Monedas",
+    "precio": 14.99,
+    "stock": 12,
+    "imagen": "img/valorant_pints.png",
+    "descripcion": "Monedas oficiales de Valorant.",
+    "detalle": "Paquete de 11.000 Valorant Points para gastar en skins, pases y la tienda diaria."
+  },
+  {
+    "id": 8,
+    "nombre": "Skin de Vandal Preludio al Caos",
+    "juego": "Valorant",
+    "tipo": "Skin de arma",
+    "precio": 7.99,
+    "stock": 4,
+    "imagen": "img/vandal_skin.png",
+    "descripcion": "Personalización exclusiva para tu Vandal.",
+    "detalle": "Aspecto de la colección Preludio al Caos para tu Vandal. Solo cosmético."
+  },
+  {
+    "id": 9,
+    "nombre": "Skin de Phantom Doombringer",
+    "juego": "Valorant",
+    "tipo": "Skin de arma",
+    "precio": 7.99,
+    "stock": 2,
+    "imagen": "img/phantom_skin.png",
+    "descripcion": "Diseño único para tu Phantom.",
+    "detalle": "Aspecto Doombringer para tu Phantom. Solo cosmético. Quedan muy pocas unidades."
+  }
+]

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--
+  TP2 - Ejercicio 3: Guía de estilo (HTML5 + CSS, sin frameworks ni JavaScript)
+  Temática: estética "neón arcade" (marca ficticia "NEÓN 84")
+  Incluye: paleta, tipografía, acordeón de textos, borde de foco en formularios,
+           botones 3D y enlaces animados con cambio de color.
+  Autor: Facundo Saenz - Práctica Profesional I - Instituto Manuel Belgrano - 2026
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NEÓN 84 - Guía de estilo</title>
+    <!-- Todo el diseño vive en un archivo CSS aparte -->
+    <link rel="stylesheet" href="css/guia.css">
+</head>
+<body>
+
+    <!-- ============ ENCABEZADO + NAVEGACIÓN (enlaces animados) ============ -->
+    <header class="cabecera">
+        <p class="sobretitulo">Guía de estilo v1.0</p>
+        <h1 class="titulo-neon">NEÓN&nbsp;84</h1>
+        <p class="bajada">Un sistema visual retro-futurista: fondos oscuros, luces de neón y componentes con volumen.</p>
+
+        <nav class="menu" aria-label="Secciones de la guía">
+            <a class="enlace" href="#paleta">Paleta</a>
+            <a class="enlace" href="#tipografia">Tipografía</a>
+            <a class="enlace" href="#botones">Botones 3D</a>
+            <a class="enlace" href="#enlaces">Enlaces</a>
+            <a class="enlace" href="#formulario">Formulario</a>
+            <a class="enlace" href="#acordeon">Acordeón</a>
+        </nav>
+    </header>
+
+    <main class="contenedor">
+
+        <!-- ============ 1. PALETA ============ -->
+        <section id="paleta">
+            <h2>1. Paleta de colores</h2>
+            <p class="intro">Fondos profundos y tres colores de neón. Cada tono tiene un rol fijo.</p>
+            <div class="paleta">
+                <div class="muestra"><span class="color" style="background:#0f0a1f"></span><strong>Noche</strong><code>#0F0A1F</code><small>Fondo de página</small></div>
+                <div class="muestra"><span class="color" style="background:#1b1233"></span><strong>Panel</strong><code>#1B1233</code><small>Tarjetas y campos</small></div>
+                <div class="muestra"><span class="color" style="background:#ff2e97"></span><strong>Magenta</strong><code>#FF2E97</code><small>Acción principal</small></div>
+                <div class="muestra"><span class="color" style="background:#00e5ff"></span><strong>Cian</strong><code>#00E5FF</code><small>Foco y enlaces</small></div>
+                <div class="muestra"><span class="color" style="background:#ffd23f"></span><strong>Amarillo</strong><code>#FFD23F</code><small>Destacados</small></div>
+                <div class="muestra"><span class="color" style="background:#eaeaf5"></span><strong>Texto</strong><code>#EAEAF5</code><small>Texto principal</small></div>
+            </div>
+        </section>
+
+        <!-- ============ 2. TIPOGRAFÍA ============ -->
+        <section id="tipografia">
+            <h2>2. Tipografía</h2>
+            <div class="tarjeta">
+                <p class="etiqueta-tipo">Títulos · Arial Black / Impact (sans-serif pesada)</p>
+                <p class="muestra-h1">Título principal H1</p>
+                <p class="muestra-h2">Subtítulo H2</p>
+                <p class="etiqueta-tipo">Cuerpo · system-ui / Segoe UI / Arial</p>
+                <p>El texto de lectura usa una sans-serif neutra de 17&nbsp;px con interlineado 1,6 para que se lea cómodo sobre fondo oscuro.</p>
+                <p class="etiqueta-tipo">Datos y código · Courier New (monoespaciada)</p>
+                <p><code class="codigo">const color = "#FF2E97";</code></p>
+            </div>
+        </section>
+
+        <!-- ============ 3. BOTONES 3D ============ -->
+        <section id="botones">
+            <h2>3. Botones 3D</h2>
+            <p class="intro">El volumen sale de una sombra sólida debajo del botón. Al presionar, el botón baja y la sombra se achica.</p>
+            <div class="fila">
+                <button class="boton boton-magenta" type="button">Jugar</button>
+                <button class="boton boton-cian" type="button">Opciones</button>
+                <button class="boton boton-amarillo" type="button">Puntajes</button>
+                <button class="boton boton-magenta" type="button" disabled>Deshabilitado</button>
+            </div>
+        </section>
+
+        <!-- ============ 4. ENLACES ANIMADOS ============ -->
+        <section id="enlaces">
+            <h2>4. Enlaces animados</h2>
+            <p class="intro">Al pasar el mouse (o enfocar con el teclado) el color cambia de cian a magenta y el subrayado se dibuja de izquierda a derecha.</p>
+            <p class="parrafo-enlaces">
+                Seguí leyendo en <a class="enlace" href="#acordeon">las preguntas frecuentes</a>,
+                volvé a <a class="enlace" href="#paleta">la paleta</a>
+                o visitá <a class="enlace" href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank" rel="noopener">MDN: CSS</a>.
+            </p>
+        </section>
+
+        <!-- ============ 5. FORMULARIO CON BORDE DE FOCO ============ -->
+        <section id="formulario">
+            <h2>5. Formulario</h2>
+            <p class="intro">El campo activo se resalta con borde cian y un resplandor. Probá hacer clic o navegar con Tab.</p>
+            <form class="tarjeta formulario" onsubmit="return false">
+                <label for="usuario">Nombre de jugador</label>
+                <input type="text" id="usuario" placeholder="Ej: PIXEL_88">
+
+                <label for="correo">Correo</label>
+                <input type="email" id="correo" placeholder="jugador@correo.com">
+
+                <label for="nivel">Dificultad</label>
+                <select id="nivel">
+                    <option>Fácil</option>
+                    <option>Normal</option>
+                    <option>Difícil</option>
+                </select>
+
+                <label for="nota">Comentarios</label>
+                <textarea id="nota" rows="3" placeholder="Contanos qué te pareció…"></textarea>
+
+                <button class="boton boton-magenta" type="submit">Guardar</button>
+            </form>
+        </section>
+
+        <!-- ============ 6. ACORDEÓN DE TEXTOS ============ -->
+        <section id="acordeon">
+            <h2>6. Acordeón de textos</h2>
+            <p class="intro">Hecho solo con HTML5 (<code class="codigo">&lt;details&gt;</code>) y CSS. Al abrir uno, los demás se cierran.</p>
+
+            <div class="acordeon">
+                <details name="faq" open>
+                    <summary>¿Qué es una guía de estilo?</summary>
+                    <div class="contenido">
+                        <p>Es un documento que reúne las reglas visuales de un producto: colores, tipografías, botones y otros componentes. Sirve para que todas las pantallas se vean coherentes.</p>
+                    </div>
+                </details>
+
+                <details name="faq">
+                    <summary>¿Por qué usar colores neón sobre fondo oscuro?</summary>
+                    <div class="contenido">
+                        <p>El contraste alto hace que los elementos interactivos se destaquen enseguida. Además, el fondo oscuro reduce el brillo en ambientes con poca luz.</p>
+                    </div>
+                </details>
+
+                <details name="faq">
+                    <summary>¿Cómo se logra el efecto 3D de los botones?</summary>
+                    <div class="contenido">
+                        <p>Con <code class="codigo">box-shadow</code> sin desenfoque desplazada hacia abajo. En <code class="codigo">:active</code> se baja el botón con <code class="codigo">transform</code> y se reduce la sombra.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <p>&copy; 2026 NEÓN 84 (proyecto académico) &middot; Práctica Profesional I</p>
+    </footer>
+</body>
+</html>

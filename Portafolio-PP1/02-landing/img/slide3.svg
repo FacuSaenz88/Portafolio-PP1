@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" preserveAspectRatio="xMidYMid slice">
+  <!-- Slide 3: brindis al atardecer en la bodega -->
+  <defs>
+    <linearGradient id="cielo3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c1233"/><stop offset="1" stop-color="#7a2e4d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="700" fill="url(#cielo3)"/>
+  <g fill="#fff3c4">
+    <circle cx="120" cy="90" r="3"/><circle cx="420" cy="50" r="2"/><circle cx="760" cy="120" r="3"/>
+    <circle cx="1020" cy="60" r="2"/><circle cx="1330" cy="110" r="3"/><circle cx="1500" cy="40" r="2"/>
+  </g>
+  <!-- guirnalda de luces -->
+  <path d="M0,150 Q400,260 800,150 T1600,150" fill="none" stroke="#3a2a4a" stroke-width="4"/>
+  <g fill="#ffd36b">
+    <circle cx="130" cy="188" r="12"/><circle cx="290" cy="226" r="12"/><circle cx="470" cy="226" r="12"/>
+    <circle cx="640" cy="188" r="12"/><circle cx="960" cy="188" r="12"/><circle cx="1130" cy="226" r="12"/>
+    <circle cx="1310" cy="226" r="12"/><circle cx="1470" cy="188" r="12"/>
+  </g>
+  <rect y="540" width="1600" height="160" fill="#2a1a2b"/>
+  <!-- copas -->
+  <g stroke="#f4e9ef" stroke-width="7" fill="rgba(160,30,70,.75)" stroke-linejoin="round">
+    <path d="M610,330 h110 q0,120 -55,130 q-55,-10 -55,-130z"/>
+    <line x1="665" y1="460" x2="665" y2="560" fill="none"/><line x1="625" y1="560" x2="705" y2="560" fill="none"/>
+    <path d="M880,330 h110 q0,120 -55,130 q-55,-10 -55,-130z"/>
+    <line x1="935" y1="460" x2="935" y2="560" fill="none"/><line x1="895" y1="560" x2="975" y2="560" fill="none"/>
+  </g>
+</svg>

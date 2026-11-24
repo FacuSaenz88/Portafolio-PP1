@@ -1,0 +1,59 @@
+/* ===========================================================
+   TP2 - Ejercicio 1: estilos propios del formulario
+   (se suman a Bootstrap 5; solo personalizan lo necesario)
+   =========================================================== */
+
+:root {
+    --color-primario: #0b5ed7;   /* azul de acción */
+    --color-oscuro:   #0d1b2a;   /* encabezado */
+    --color-fondo:    #eef2f7;   /* fondo de página */
+}
+
+body {
+    background-color: var(--color-fondo);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    color: #1f2933;
+}
+
+/* Encabezado */
+.encabezado {
+    background: linear-gradient(135deg, var(--color-oscuro), #1b3a5c);
+}
+.marca {
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    font-size: .85rem;
+    opacity: .85;
+}
+
+/* Tarjeta blanca que contiene el formulario */
+.tarjeta {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(13, 27, 42, .10);
+}
+
+/* Botón principal */
+.btn-primario {
+    background-color: var(--color-primario);
+    border-color: var(--color-primario);
+    color: #fff;
+}
+.btn-primario:hover,
+.btn-primario:focus {
+    background-color: #0a4fb3;
+    border-color: #0a4fb3;
+    color: #fff;
+}
+
+/* Mensaje de error del grupo de radios: solo visible cuando el formulario
+   fue validado y ningún radio está elegido */
+.d-block-if-invalid { display: none; }
+.was-validated input[name="gravedad"]:invalid ~ .d-block-if-invalid { display: block; }
+
+/* Etiqueta tipo "form-label" para el grupo de radios */
+span.form-label { font-weight: 500; }
+
+/* Colores explícitos para no depender de variables de Bootstrap */
+.encabezado h1 { color: #fff; }
+.text-secondary { color: #5b6670 !important; }

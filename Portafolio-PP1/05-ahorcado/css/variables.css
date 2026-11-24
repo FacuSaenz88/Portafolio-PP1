@@ -1,0 +1,15 @@
+/* ===========================================================
+   Variables de diseño del ahorcado (archivo importado por estilos.css)
+   =========================================================== */
+:root {
+    --fondo:      #08120d;
+    --panel:      #0f1f17;
+    --borde:      #1f3d2c;
+    --verde:      #39ff88;   /* acierto y acentos */
+    --verde-osc:  #1a9e52;
+    --ambar:      #ffb020;   /* alertas */
+    --rojo:       #ff5c5c;   /* error y derrota */
+    --texto:      #d9f5e4;
+    --apagado:    #8fb8a0;
+    --fuente:     "Courier New", Courier, monospace;
+}

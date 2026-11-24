@@ -1,0 +1,84 @@
+/* ===========================================================
+   TP3 - Catálogo MyTems: estilos propios (complementan Bootstrap 5)
+   Mantiene la identidad del parcial 1: gris oscuro + azul #3aa6ff
+   =========================================================== */
+
+:root {
+    --azul:      #3aa6ff;
+    --azul-osc:  #1f7fd1;
+    --gris:      #444444;
+    --fondo:     #f4f4f4;
+    --texto:     #333333;
+}
+
+body {
+    background-color: var(--fondo);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Encabezado fijo */
+.encabezado { background-color: var(--gris); box-shadow: 0 2px 8px rgba(0,0,0,.25); z-index: 1020; }
+.logo { height: 48px; width: auto; }
+
+/* Botones */
+.btn-primario { background-color: var(--azul-osc); border-color: var(--azul-osc); color: #fff; }
+.btn-primario:hover, .btn-primario:focus { background-color: #17639f; border-color: #17639f; color: #fff; }
+.btn-primario:disabled { background-color: #8aa9c2; border-color: #8aa9c2; color: #fff; }
+.btn-carrito { background-color: var(--azul); border-color: var(--azul); color: #06223a; font-weight: 700; }
+.btn-carrito:hover { background-color: #6dbdff; border-color: #6dbdff; color: #06223a; }
+.insignia { background-color: #fff; color: var(--gris); margin-left: 4px; }
+
+/* Tarjetas */
+.tarjeta { background-color: #fff; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,.1); }
+.titulo { color: var(--gris); font-weight: 700; }
+
+.producto {
+    background-color: #fff;
+    border: 0;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+.producto:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(0,0,0,.18); }
+
+/* Marco de imagen: tamaño fijo para que todas las tarjetas queden alineadas */
+.marco-img {
+    background-color: #1d2026;
+    border-radius: 10px;
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.marco-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.producto .marco-img { border-radius: 12px 12px 0 0; }
+
+.producto h3 { font-size: 1.02rem; font-weight: 700; color: var(--texto); }
+.precio { color: var(--azul-osc); font-weight: 700; }
+
+/* Etiquetas */
+.etiqueta { background-color: var(--azul-osc); color: #fff; }
+.etiqueta-gris { background-color: #e3e6ea; color: #333; }
+
+/* Aviso de stock */
+.stock-ok  { color: #2c6e3f; }
+.stock-bajo{ color: #a65a00; font-weight: 700; }
+.stock-cero{ color: #b02a37; font-weight: 700; }
+
+/* Carrito */
+#listaCarrito li { display: grid; grid-template-columns: 56px 1fr; gap: 10px; padding: 10px 0; border-bottom: 1px solid #e5e5e5; }
+#listaCarrito .mini { width: 56px; height: 56px; background: #1d2026; border-radius: 8px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+#listaCarrito .mini img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.cantidad { display: inline-flex; align-items: center; gap: 6px; }
+.cantidad .btn { width: 30px; height: 30px; padding: 0; line-height: 1; }
+.cantidad span { min-width: 22px; text-align: center; font-weight: 700; }
+
+.pie { background-color: var(--gris); color: #fff; margin-top: 30px; }
+
+/* Colores explícitos (no dependen de variables de Bootstrap) */
+.text-secondary { color: #5b6670 !important; }

@@ -1,0 +1,132 @@
+/* ===========================================================
+   TP3 - Ahorcado: hoja de estilos principal
+   El HTML solo enlaza este archivo; las variables se IMPORTAN acá.
+   =========================================================== */
+@import url("variables.css");
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 50% -10%, rgba(57,255,136,.12), transparent 55%),
+        var(--fondo);
+    color: var(--texto);
+    font-family: var(--fuente);
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.contenedor { max-width: 860px; margin: 0 auto; padding: 24px 18px 40px; }
+
+/* ---------- Cabecera ---------- */
+.cabecera { text-align: center; margin-bottom: 18px; }
+.cabecera h1 {
+    margin: 0;
+    font-size: clamp(1.8rem, 6vw, 2.8rem);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--verde);
+    text-shadow: 0 0 14px rgba(57,255,136,.55);
+}
+.cabecera p { margin: 4px 0 0; color: var(--apagado); }
+
+/* ---------- Controles superiores ---------- */
+.controles {
+    display: flex; flex-wrap: wrap; gap: 12px 18px;
+    justify-content: space-between; align-items: center;
+    background-color: var(--panel); border: 1px solid var(--borde);
+    border-radius: 10px; padding: 12px 16px; margin-bottom: 18px;
+}
+.niveles { display: flex; gap: 8px; border: 0; margin: 0; padding: 0; }
+.niveles legend { padding: 0; margin-bottom: 4px; color: var(--apagado); font-size: .85rem; }
+.nivel { position: relative; }
+.nivel input { position: absolute; opacity: 0; }
+.nivel span {
+    display: inline-block; padding: 6px 14px; border: 1px solid var(--borde);
+    border-radius: 8px; cursor: pointer; transition: all .15s ease;
+}
+.nivel input:checked + span { background-color: var(--verde); color: #04140b; border-color: var(--verde); font-weight: 700; }
+.nivel input:focus-visible + span { outline: 2px dashed var(--verde); outline-offset: 3px; }
+.nivel span:hover { border-color: var(--verde); }
+
+.marcador { display: flex; gap: 14px; font-size: .95rem; color: var(--apagado); }
+.marcador strong { color: var(--texto); }
+
+/* ---------- Botones ---------- */
+.boton {
+    font-family: var(--fuente); font-size: 1rem; font-weight: 700; text-transform: uppercase;
+    color: #04140b; background-color: var(--verde); border: 0; border-radius: 8px;
+    padding: 10px 20px; cursor: pointer; box-shadow: 0 4px 0 var(--verde-osc);
+    transition: transform .1s ease, box-shadow .1s ease;
+}
+.boton:hover  { transform: translateY(-1px); }
+.boton:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--verde-osc); }
+.boton:focus-visible { outline: 3px dashed #fff; outline-offset: 3px; }
+
+/* ---------- Zona de juego ---------- */
+.juego { display: grid; grid-template-columns: 230px 1fr; gap: 20px; align-items: center; }
+.dibujo {
+    background-color: var(--panel); border: 1px solid var(--borde);
+    border-radius: 12px; padding: 10px;
+}
+.dibujo svg { width: 100%; height: auto; display: block; }
+
+/* Partes del muñeco: ocultas hasta que se cometa el error correspondiente */
+.parte { stroke: var(--texto); stroke-width: 5; stroke-linecap: round; fill: none; opacity: 0; transition: opacity .25s ease; }
+.parte.visible { opacity: 1; }
+.parte.cabeza.visible { stroke: var(--ambar); }
+.perdio .parte.visible { stroke: var(--rojo); }
+
+.tablero { text-align: center; }
+.estado { min-height: 1.6em; margin: 0 0 6px; color: var(--apagado); }
+.pista { margin: 0 0 14px; min-height: 3em; color: var(--ambar); }
+
+/* Palabra oculta: una casilla por letra */
+.palabra { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin: 8px 0 18px; }
+.letra {
+    width: 34px; height: 44px; display: flex; align-items: center; justify-content: center;
+    border-bottom: 3px solid var(--verde); font-size: 1.6rem; font-weight: 700; color: var(--verde);
+    text-transform: uppercase;
+}
+.letra.revelada-final { color: var(--rojo); border-color: var(--rojo); }   /* letras que faltaban al perder */
+
+.vidas { margin: 0; font-size: .95rem; }
+.vidas strong { color: var(--ambar); }
+
+/* ---------- Teclado en pantalla ---------- */
+.teclado { display: grid; grid-template-columns: repeat(9, 1fr); gap: 6px; margin-top: 22px; }
+.tecla {
+    font-family: var(--fuente); font-size: 1.05rem; font-weight: 700; text-transform: uppercase;
+    padding: 10px 0; color: var(--texto); background-color: var(--panel);
+    border: 1px solid var(--borde); border-radius: 8px; cursor: pointer;
+    transition: background-color .12s ease, transform .1s ease;
+}
+.tecla:hover:not(:disabled) { background-color: #16301f; border-color: var(--verde); }
+.tecla:active:not(:disabled) { transform: translateY(2px); }
+.tecla:focus-visible { outline: 2px dashed var(--verde); outline-offset: 2px; }
+.tecla:disabled { cursor: not-allowed; opacity: .55; }
+.tecla.acierto { background-color: var(--verde); color: #04140b; border-color: var(--verde); }
+.tecla.error   { background-color: #3a1515; color: var(--rojo); border-color: var(--rojo); text-decoration: line-through; }
+
+/* ---------- Resultado final ---------- */
+.resultado {
+    margin-top: 18px; padding: 16px; border-radius: 12px; text-align: center;
+    border: 2px solid var(--verde); background-color: rgba(57,255,136,.08);
+}
+.resultado.derrota { border-color: var(--rojo); background-color: rgba(255,92,92,.08); }
+.resultado h2 { margin: 0 0 6px; text-transform: uppercase; letter-spacing: .08em; }
+.resultado p { margin: 0 0 12px; }
+[hidden] { display: none !important; }
+
+/* ---------- Celulares ---------- */
+@media (max-width: 640px) {
+    body { font-size: 16px; }
+    .juego { grid-template-columns: 1fr; }
+    .dibujo { max-width: 200px; margin: 0 auto; }
+    .teclado { grid-template-columns: repeat(7, 1fr); }
+    .letra { width: 26px; height: 38px; font-size: 1.3rem; }
+}
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

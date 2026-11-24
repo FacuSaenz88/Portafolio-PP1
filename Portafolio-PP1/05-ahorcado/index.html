@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+  TP3 - Ejercicio 2: minijuego web "Ahorcado" (HTML + CSS + JavaScript)
+  Tres niveles de dificultad, teclado en pantalla y físico, marcador.
+  El estilo está en css/estilos.css (archivo aparte) que importa css/variables.css.
+  Autor: Facundo Saenz - Práctica Profesional I - Instituto Manuel Belgrano - 2026
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ahorcado - Informática</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <main class="contenedor">
+
+        <header class="cabecera">
+            <h1>Ahorcado</h1>
+            <p>Adiviná la palabra de informática antes de quedarte sin intentos.</p>
+        </header>
+
+        <!-- Controles: nivel de dificultad, marcador y nueva partida -->
+        <section class="controles">
+            <fieldset class="niveles">
+                <legend>Dificultad</legend>
+                <label class="nivel"><input type="radio" name="nivel" value="facil"><span>Fácil</span></label>
+                <label class="nivel"><input type="radio" name="nivel" value="normal" checked><span>Normal</span></label>
+                <label class="nivel"><input type="radio" name="nivel" value="dificil"><span>Difícil</span></label>
+            </fieldset>
+
+            <div class="marcador" aria-label="Marcador">
+                <span>Ganadas: <strong id="marcadorGanadas">0</strong></span>
+                <span>Perdidas: <strong id="marcadorPerdidas">0</strong></span>
+                <span>Racha: <strong id="marcadorRacha">0</strong></span>
+            </div>
+
+            <button type="button" class="boton" id="btnNueva">Nueva partida</button>
+        </section>
+
+        <!-- Zona de juego -->
+        <section class="juego">
+            <div class="dibujo" aria-hidden="true">
+                <svg viewBox="0 0 200 240" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Cada elemento .parte aparece con un error (de arriba hacia abajo) -->
+                    <line class="parte" x1="20"  y1="225" x2="130" y2="225"/>            <!-- 1 base -->
+                    <line class="parte" x1="50"  y1="225" x2="50"  y2="20"/>             <!-- 2 poste -->
+                    <polyline class="parte" points="50,20 140,20"/>                       <!-- 3 viga -->
+                    <line class="parte" x1="140" y1="20"  x2="140" y2="55"/>             <!-- 4 soga -->
+                    <circle class="parte cabeza" cx="140" cy="75" r="20"/>               <!-- 5 cabeza -->
+                    <line class="parte" x1="140" y1="95"  x2="140" y2="155"/>            <!-- 6 cuerpo -->
+                    <polyline class="parte" points="110,125 140,105 170,125"/>           <!-- 7 brazos -->
+                    <polyline class="parte" points="115,200 140,155 165,200"/>           <!-- 8 piernas -->
+                </svg>
+            </div>
+
+            <div class="tablero">
+                <p class="estado" id="estado" aria-live="polite"></p>
+                <p class="pista" id="pista"></p>
+                <div class="palabra" id="palabra" role="img"></div>
+                <p class="vidas" id="vidas"></p>
+            </div>
+        </section>
+
+        <!-- Teclado en pantalla -->
+        <section class="teclado" id="teclado" aria-label="Teclado"></section>
+
+        <!-- Resultado de la partida -->
+        <section class="resultado" id="resultado" hidden aria-live="polite">
+            <h2 id="resultadoTitulo"></h2>
+            <p id="resultadoTexto"></p>
+            <button type="button" class="boton" id="btnOtra">Jugar otra vez</button>
+        </section>
+
+    </main>
+
+    <script src="js/palabras.js"></script>
+    <script src="js/ahorcado.js"></script>
+</body>
+</html>

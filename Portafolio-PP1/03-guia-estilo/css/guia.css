@@ -1,0 +1,224 @@
+/* ===========================================================
+   TP2 - Ejercicio 3: hoja de estilos de la guía "NEÓN 84"
+   Organización:
+     1. Variables (paleta)   2. Base   3. Cabecera y menú
+     4. Secciones y tarjetas 5. Paleta 6. Tipografía
+     7. Botones 3D           8. Enlaces animados
+     9. Formulario (foco)   10. Acordeón   11. Pie y responsive
+   =========================================================== */
+
+/* ---------- 1. VARIABLES ---------- */
+:root {
+    --noche:    #0f0a1f;
+    --panel:    #1b1233;
+    --borde:    #3a2a63;
+    --magenta:  #ff2e97;
+    --cian:     #00e5ff;
+    --amarillo: #ffd23f;
+    --texto:    #eaeaf5;
+    --apagado:  #b4a9d6;
+
+    --fuente-titulo: "Arial Black", Impact, "Segoe UI Black", sans-serif;
+    --fuente-cuerpo: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --fuente-codigo: "Courier New", Courier, monospace;
+}
+
+/* ---------- 2. BASE ---------- */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(circle at 20% 0%, rgba(255,46,151,.18), transparent 45%),
+        radial-gradient(circle at 90% 10%, rgba(0,229,255,.14), transparent 40%),
+        var(--noche);
+    color: var(--texto);
+    font-family: var(--fuente-cuerpo);
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+h1, h2 { font-family: var(--fuente-titulo); text-transform: uppercase; letter-spacing: .04em; }
+h2 { color: var(--amarillo); font-size: 1.5rem; margin: 0 0 .4rem; }
+p  { margin: 0 0 1rem; }
+
+/* ---------- 3. CABECERA Y MENÚ ---------- */
+.cabecera { text-align: center; padding: 56px 20px 28px; }
+.sobretitulo { color: var(--cian); letter-spacing: .3em; text-transform: uppercase; font-size: .85rem; margin-bottom: .2rem; }
+.titulo-neon {
+    margin: 0 0 .5rem;
+    font-size: clamp(2.6rem, 9vw, 5rem);
+    color: #fff;
+    /* Efecto neón: varias sombras de texto superpuestas */
+    text-shadow: 0 0 6px #fff, 0 0 18px var(--magenta), 0 0 38px var(--magenta), 0 0 70px var(--magenta);
+}
+.bajada { max-width: 560px; margin: 0 auto 1.6rem; color: var(--apagado); }
+.menu { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 26px; }
+
+/* ---------- 4. SECCIONES Y TARJETAS ---------- */
+.contenedor { max-width: 920px; margin: 0 auto; padding: 0 20px 40px; }
+section { padding: 34px 0 10px; border-top: 1px solid var(--borde); margin-top: 26px; }
+.intro { color: var(--apagado); }
+.tarjeta {
+    background-color: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    padding: 22px;
+}
+.fila { display: flex; flex-wrap: wrap; gap: 18px; padding: 8px 0 14px; }
+
+/* ---------- 5. PALETA ---------- */
+.paleta { display: grid; grid-template-columns: repeat(auto-fill, minmax(135px, 1fr)); gap: 14px; }
+.muestra {
+    display: flex; flex-direction: column; gap: 2px;
+    background-color: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 10px;
+}
+.color { display: block; height: 62px; border-radius: 8px; margin-bottom: 6px; border: 1px solid rgba(255,255,255,.2); }
+.muestra code { font-family: var(--fuente-codigo); color: var(--cian); }
+.muestra small { color: var(--apagado); }
+
+/* ---------- 6. TIPOGRAFÍA ---------- */
+.etiqueta-tipo { color: var(--cian); font-family: var(--fuente-codigo); font-size: .85rem; margin: 1rem 0 .3rem; }
+.etiqueta-tipo:first-child { margin-top: 0; }
+.muestra-h1 { font-family: var(--fuente-titulo); font-weight: 900; font-size: 2.2rem; text-transform: uppercase; margin: 0; line-height: 1.15; }
+.muestra-h2 { font-family: var(--fuente-titulo); font-weight: 900; font-size: 1.5rem; color: var(--amarillo); text-transform: uppercase; margin: 0; }
+.codigo { font-family: var(--fuente-codigo); background-color: rgba(0,229,255,.12); color: var(--cian); padding: 2px 7px; border-radius: 5px; }
+
+/* ---------- 7. BOTONES 3D ----------
+   Truco: una sombra sólida (sin desenfoque) hacia abajo simula el grosor.
+   Al presionar, el botón baja lo mismo que la sombra se achica. */
+.boton {
+    --color: var(--magenta);
+    --sombra: #a3105f;          /* versión más oscura del color */
+    font-family: var(--fuente-titulo);
+    font-weight: 900;
+    font-size: 1rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: #1a0412;             /* texto oscuro: contraste >= 5:1 sobre los tres colores */
+    background-color: var(--color);
+    border: 0;
+    border-radius: 12px;
+    padding: 14px 30px;
+    cursor: pointer;
+    box-shadow: 0 8px 0 var(--sombra), 0 14px 18px rgba(0,0,0,.45);
+    transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+}
+.boton-cian     { --color: var(--cian);     --sombra: #00899b; color: #04202a; }
+.boton-amarillo { --color: var(--amarillo); --sombra: #b58a00; color: #2a2000; }
+
+.boton:hover  { transform: translateY(-2px); box-shadow: 0 10px 0 var(--sombra), 0 18px 22px rgba(0,0,0,.45); filter: brightness(1.08); }
+.boton:active { transform: translateY(6px);  box-shadow: 0 2px 0 var(--sombra), 0 4px 6px rgba(0,0,0,.45); }
+.boton:focus-visible { outline: 3px dashed #fff; outline-offset: 4px; }
+.boton:disabled { opacity: .45; cursor: not-allowed; transform: none; filter: grayscale(.4); box-shadow: 0 8px 0 var(--sombra); }
+
+/* ---------- 8. ENLACES ANIMADOS ----------
+   El subrayado es un degradado de fondo cuyo ancho crece de 0 a 100 %.
+   El color del texto cambia con transition. */
+.enlace {
+    color: var(--cian);
+    text-decoration: none;
+    font-weight: 600;
+    background-image: linear-gradient(var(--magenta), var(--magenta));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0% 3px;
+    padding-bottom: 3px;
+    transition: color .3s ease, background-size .35s ease;
+}
+.enlace:hover,
+.enlace:focus-visible {
+    color: var(--magenta);
+    background-size: 100% 3px;
+    outline: none;
+}
+.parrafo-enlaces { font-size: 1.1rem; }
+
+/* ---------- 9. FORMULARIO CON BORDE DE FOCO ---------- */
+.formulario { display: flex; flex-direction: column; gap: 6px; max-width: 520px; }
+.formulario label { font-weight: 600; margin-top: 8px; }
+.formulario input,
+.formulario select,
+.formulario textarea {
+    font-family: var(--fuente-cuerpo);
+    font-size: 1rem;
+    color: var(--texto);
+    background-color: var(--noche);
+    border: 2px solid var(--borde);
+    border-radius: 10px;
+    padding: 11px 13px;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+.formulario input::placeholder,
+.formulario textarea::placeholder { color: #8277a8; }
+
+/* >>> El campo con el foco se resalta con borde cian y resplandor <<< */
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+    outline: none;
+    border-color: var(--cian);
+    box-shadow: 0 0 0 4px rgba(0,229,255,.25), 0 0 18px rgba(0,229,255,.45);
+}
+.formulario .boton { align-self: flex-start; margin-top: 16px; }
+
+/* ---------- 10. ACORDEÓN ---------- */
+.acordeon { display: flex; flex-direction: column; gap: 12px; }
+.acordeon details {
+    background-color: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+.acordeon details[open] { border-color: var(--magenta); box-shadow: 0 0 16px rgba(255,46,151,.3); }
+
+.acordeon summary {
+    list-style: none;                 /* oculta el triángulo por defecto */
+    cursor: pointer;
+    padding: 16px 52px 16px 20px;
+    font-weight: 700;
+    position: relative;
+    transition: background-color .2s ease;
+}
+.acordeon summary::-webkit-details-marker { display: none; }
+.acordeon summary:hover { background-color: rgba(255,255,255,.04); }
+.acordeon summary:focus-visible { outline: 3px solid var(--cian); outline-offset: -3px; }
+
+/* Ícono "+" que gira y pasa a "−" al abrir */
+.acordeon summary::after {
+    content: "+";
+    position: absolute;
+    right: 20px; top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.6rem;
+    color: var(--magenta);
+    transition: transform .3s ease;
+}
+.acordeon details[open] summary::after { content: "\2212"; transform: translateY(-50%) rotate(180deg); }
+
+.acordeon .contenido { padding: 0 20px 6px; color: var(--apagado); }
+.acordeon details[open] .contenido { animation: desplegar .35s ease; }
+
+@keyframes desplegar {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- 11. PIE Y RESPONSIVE ---------- */
+.pie { text-align: center; color: var(--apagado); font-size: .9rem; padding: 26px 20px 40px; border-top: 1px solid var(--borde); }
+
+@media (max-width: 520px) {
+    body { font-size: 16px; }
+    .boton { width: 100%; }
+    .fila { flex-direction: column; }
+    .formulario .boton { align-self: stretch; }
+}
+
+/* Respeta a quienes pidieron menos movimiento en su sistema */
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+}
